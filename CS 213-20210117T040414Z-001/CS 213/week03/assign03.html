@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="mystyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Bridge Web Page CSS Version</title>
+
+<style>
+    
+
+    .div-1 {
+        background-color: #EBEBEB;
+        
+    }
+    body{
+        color:rgb(122, 122, 128);
+        font-family: monospace;
+    }
+    
+    #about_me{
+        position:absolute;
+        top: 875px;
+        left:900px;
+        right: 400px;
+        padding:30px;
+        height: 175px;
+
+        border: 20px;
+        background-color: rgba(13, 3, 71, 0.61);
+        font-size: 18px;
+        color: black;
+        float:left;
+    }
+    
+
+
+   </style>
+</head>
+<body>
+    
+    <div class="div-1">
+        <header id="top">
+            <a href="../index.html" >  CS 213 Assignments</a>
+            <h1 style="font-family:fantasy;"><a href="#about_me">Robert Bridge's Home Page</a></h1>
+            <h3 style="color: #e0e6e9;"><b> Welcome to my home page </b></h3>
+        </header>
+        
+        
+        <hr>
+        <div id="quote">
+            <blockquote> <i>What we do in life Echos in Eternity </i> -Gladiator</blockquote>
+        </div>
+    
+        <div id="mefact">
+            <h4><b>Some Things About Me.</b></h4>
+            <ul>
+                <li>I'm from <a href="#nc">North Carolina</a></li>
+                <li>I live in Northern Virginia</li>
+                <li>I'm and applied technology major</li>
+                <li>I have <strong>4</strong> kids</li>
+                <li>I work in the exciting field of <i style="font-family: sans-serif;">Cybersecurity</i></li>
+
+            </ul>
+        </div>
+        <br />
+        <div class='classes'>
+            <table >
+                <tr>
+                    <th>Class</th>
+                    <th>Course Number</th>
+                    <th>Credits</th>                      
+                </tr>
+            
+                <tr style="font-family: fantasy;">
+                    <td>Web Engineering I</td>
+                    <td>CS 213</td>
+                    <td>3 Credits</td>
+                </tr>
+            </table>
+        </div>
+        
+
+        <br />
+        </div>
+        <div class='flags'>
+            <div class='img1'>
+                <a  href="https://www.ca.gov"><img src="https://www.50states.com/flag/image/nunst0006.gif" alt="CA Flag"></a>
+            </div>
+            <div class='img2'>
+                <a  href="https://texas.gov"><img src="https://50states-wp.s3.amazonaws.com/wp-content/uploads/2020/01/22193625/640px-Flag_of_Texas4.png.webp" alt="TX Flag"></a>
+            </div>
+            <div class='img3'>
+                <a  href="https://nc.gov"><img id="nc" src="https://www.50states.com/flag/image/nunst055.gif" alt="NC Flag"></a>
+            </div>
+            <div class='img4'>
+                <a href="https://www.virginia.gov/"><img src="https://www.50states.com/flag/image/nunst075.gif" alt="VA Flag"></a>
+            </div>
+            <div class='img5'>
+                <a  href="https://www.utah.gov/index.html"><img src="https://50states-wp.s3.amazonaws.com/wp-content/uploads/2020/01/10011245/1024px-Flag_of_Utah.svg_-768x480.png.webp" alt="UT Flag"></a>
+            </div>            
+            
+            <br />
+        </div>
+    
+    <form class='form'>
+        <label>Single Line:</label>
+        <input type="text" name="single_Line"><br>
+        
+        <ul>
+            <li>check block 1<input type="checkbox" id="check1" ></li>
+            <li>check block 2<input type="checkbox" id="check2" ></li>
+            <li>check block 3<input type="checkbox" id="check3" ></li>
+            <li>radio 1<input type="radio" id="rad1" ></li>
+            <li>radio 2<input type="radio" id="rad2" ></li>
+            <li>radio 3<input type="radio" id="rad3" ></li>
+        </ul>
+        <label>Multi Line:</label>
+        <textarea rows = "5" cols = "60" name = "multi_line">
+            Enter details here...
+         </textarea><br>
+         <label for="select">Select List:</label>
+        <select id="select" name="select">
+            <option value="s1">Select1</option>
+            <option value="s2">Select2</option>
+            <option value="s3">Select3</option>
+            <option value="s4">Select4</option>
+        </select><br>
+        <input type="submit"><input type="reset">
+    </form>
+
+    <div id="about_me">
+        <h3>All about me.</h3>
+        <p>I was born in Utah and grew up in California and Northin Carolina.  
+            My kids joke that we move as a hobby. Since getting married 15 years ago we haven't 
+            lived anywhere longer than 3 years. </p>
+    </div><br>
+
+
+    <footer id="foot">
+        <p>Author: Robert Bridge 
+        </p>
+
+    </footer>
+
+</body>
+
+
+</html>
