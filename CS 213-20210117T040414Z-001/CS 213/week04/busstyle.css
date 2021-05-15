@@ -11,6 +11,7 @@ html {
     position: relative;
     text-align: center;
     padding: 40px;
+    font-size: 2vw;
     
     background-color: black;
     color: whitesmoke;
@@ -28,7 +29,7 @@ html {
 }
 #navigation{
     width: 15%;
-    
+    font-size: 1vw;
     top:-10px;
 
  }
