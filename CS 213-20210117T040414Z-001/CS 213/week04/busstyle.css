@@ -12,7 +12,7 @@ html {
     text-align: center;
     padding: 40px;
     font-size: 2vw;
-    
+    font-family:Georgia;
     background-color: black;
     color: whitesmoke;
     margin: 0 -9999rem;
@@ -21,6 +21,7 @@ html {
     top:0;
  }
  #aboutus{
+    color:rgb(4, 4, 128);
     position:absolute;
     left: 200px;
     width: 1000px;
@@ -40,6 +41,7 @@ html {
      width: 100px;
      position:relative;
      height:1000px;
+     
     
     
  }
@@ -48,7 +50,6 @@ html {
     border: black;
     text-align: center;
     padding: 40px;
-    
     background-color: black;
     color: whitesmoke;
     margin: 0 -9999rem;
