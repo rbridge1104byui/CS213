@@ -6,8 +6,43 @@
     <title>Document</title>
 </head>
 <body>
+  <form>
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name"><br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name"><br>
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="3" cols="30"></textarea><br>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone"><br>
+    <input type="checkbox" id="item_0" name="item_0" value="Bike">
+    <label for="vehicle1"> Bike  $80</label><br>
+    <input type="checkbox" id="item_1" name="item_1" value="skateboard">
+    <label for="skateboard"> Skateboard  $40</label><br>
+    <input type="checkbox" id="item_2" name="item_2" value="rollerSkate">
+    <label for="rollerSkate"> Roller Skates $30</label><br>
+    <input type="checkbox" id="item_3" name="item_3" value="rollerBlade">
+    <label for="rollerBlade"> Roller Blade $90</label><br><br>
+    <p id="total">Total: $0 </p>
+    <p>Credit Card Type</p>
+    <!--visa, mastercard, american express-->
+    <input type="radio" id="visa" name="card" value="visa">
+    <label for="visa">Visa</label>
+    <input type="radio" id="mastercard" name="card" value="mastercard">
+    <label for="mastercard">Mastercard</label>
+    <input type="radio" id="amex" name="card" value="amex">
+    <label for="amex">American Express</label><br>
+    <label for="credit_card">Credit Card:</label>
+    <input type="text" id="credit_card" name="credit_card"><br>
+    <label for="exp_date">Credit Card Expiration Date:</label>
+    <textarea id="exp_date" name="exp_date" rows="1" cols="30"></textarea><br>
+    <button type = "button" id="submit" onclick="">Submit</button>
+      <input type="button" onclick="resetForm()" value="Reset form">
+
+
+  </form>
   
-  <p>This will be assignment 8 </p>
+  
 
 
 </body>
