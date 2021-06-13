@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="assign08.css">
+    <title>Form</title>
 </head>
 <body>
-  <form>
+  <header>
+    <h1>Bobs Big Store</h1>
+    <h2>We Sell fun stuff, but aren't safe at all for your credit card</h2>
+  </header>
+  <form onsubmit="return false;">
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name"><br>
     <label for="last_name">Last Name:</label>
@@ -14,15 +19,15 @@
     <label for="address">Address:</label>
     <textarea id="address" name="address" rows="3" cols="30"></textarea><br>
     <label for="phone">Phone:</label>
-    <input type="text" id="phone" name="phone"><br>
-    <input type="checkbox" id="item_0" name="item_0" value="Bike">
-    <label for="vehicle1"> Bike  $80</label><br>
-    <input type="checkbox" id="item_1" name="item_1" value="skateboard">
-    <label for="skateboard"> Skateboard  $40</label><br>
-    <input type="checkbox" id="item_2" name="item_2" value="rollerSkate">
-    <label for="rollerSkate"> Roller Skates $30</label><br>
-    <input type="checkbox" id="item_3" name="item_3" value="rollerBlade">
-    <label for="rollerBlade"> Roller Blade $90</label><br><br>
+    <input  id="phone" name="phone" type='tel' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="(202)123-1212" required ><br>
+    <input type="checkbox" id="item_0" name="items" value="vehicle1" onclick="checkyChecky()">
+    <label > Bike  $80</label><br>
+    <input type="checkbox" id="item_1" name="items" value="skateboard" onclick="checkyChecky()">
+    <label > Skateboard  $40</label><br>
+    <input type="checkbox" id="item_2" name="items" value="rollerSkate" onclick="checkyChecky()">
+    <label > Roller Skates $30</label><br>
+    <input type="checkbox" id="item_3" name="items" value="rollerBlade"  onclick="checkyChecky()">
+    <label > Roller Blade $90</label><br><br>
     <p id="total">Total: $0 </p>
     <p>Credit Card Type</p>
     <!--visa, mastercard, american express-->
@@ -33,14 +38,54 @@
     <input type="radio" id="amex" name="card" value="amex">
     <label for="amex">American Express</label><br>
     <label for="credit_card">Credit Card:</label>
-    <input type="text" id="credit_card" name="credit_card"><br>
+    <input type="text" id="credit_card" name="credit_card" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" title="1111 1111 1111 1111"><br>
     <label for="exp_date">Credit Card Expiration Date:</label>
-    <textarea id="exp_date" name="exp_date" rows="1" cols="30"></textarea><br>
-    <button type = "button" id="submit" onclick="">Submit</button>
-      <input type="button" onclick="resetForm()" value="Reset form">
-
-
+    <textarea id="exp_date" name="exp_date" rows="1" cols="30"  title="05/2020"></textarea><br>
+    <p id="demo"></p> 
+    <button type = "submit" id="submit" onclick="runnIt()">Submit</button>
+  <input type="reset"  value="Reset">
   </form>
+  <p id="message"></p>
+ 
+<script>
+  function runnIt() {
+    
+    
+    document.getElementById("message").innerHTML = "Everything submitted and validated";
+    
+  }
+
+  function checkyChecky(){
+    let total = 0;
+    let item_0 = document.getElementById("item_0");
+    let price_item_0 = 80;
+    let item_1 = document.getElementById("item_1");
+    let price_item_1 = 40;
+    let item_2 = document.getElementById("item_2");
+    let price_item_2 = 30;
+    let item_3 = document.getElementById("item_3");
+    let price_item_3 = 90;
+    if (item_0.checked == true){
+      total += price_item_0;
+      document.getElementById("total").innerHTML = "Total:$"+ total;
+    }
+    if (item_1.checked == true){
+      total += price_item_1;
+      document.getElementById("total").innerHTML = "Total:$"+ total;
+    }
+    if (item_2.checked == true){
+      total += price_item_2;
+      document.getElementById("total").innerHTML = "Total:$"+ total;
+    }
+    if (item_3.checked == true){
+      total += price_item_3;
+      document.getElementById("total").innerHTML = "Total:$"+ total;
+    }else{              
+      document.getElementById("total").innerHTML = "Total:$"+ total;
+    }
+
+  }      
+</script>
   
   
 
