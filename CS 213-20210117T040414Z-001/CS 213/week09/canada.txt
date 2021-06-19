@@ -1,0 +1,13 @@
+	Name	Population	
+1	Toronto  	2,600,000
+2	Montreal    1,600,000	
+3	Calgary  	1,019,942	
+4	Ottawa  	812,129	
+5	Edmonton  	712,391	
+6	Mississauga 668,549	
+7	Winnipeg  	632,063	
+8	Vancouver 	600,000	
+9	Québec  	528,595	
+10	Hamilton  	519,949	
+11	Brampton  	433,806	
+12	Surrey, 	394,976	

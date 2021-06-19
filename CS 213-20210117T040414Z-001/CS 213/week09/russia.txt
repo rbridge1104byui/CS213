@@ -1,0 +1,13 @@
+	Name	Population	Latitude/Longitude
+1	Moscow  wikipedia article, Moscow	10,381,222	55.752 / 37.616
+2	St Petersburg  wikipedia article, St.-Petersburg	5,028,000	59.939 / 30.314
+3	Novosibirsk  wikipedia article, Novosibirsk Oblast	1,419,007	55.041 / 82.935
+4	Yekaterinburg  wikipedia article, Sverdlovsk	1,349,772	56.852 / 60.612
+5	Nizhny Novgorod  wikipedia article, Nizhny Novgorod Oblast	1,284,164	56.329 / 44.002
+6	Samara  wikipedia article, Samara Oblast	1,134,730	53.2 / 50.15
+7	Omsk  wikipedia article, Omsk	1,129,281	54.992 / 73.369
+8	Kazan’  wikipedia article, Tatarstan Republic	1,104,738	55.789 / 49.122
+9	Rostov-on-Don  wikipedia article, Rostov	1,074,482	47.231 / 39.723
+10	Chelyabinsk  wikipedia article, Chelyabinsk	1,062,919	55.154 / 61.429
+11	Ufa  wikipedia article, Bashkortostan Republic	1,033,338	54.743 / 55.968
+12	Volgograd  wikipedia article, Volgograd Oblast	1,011,417	48.719 / 44.502

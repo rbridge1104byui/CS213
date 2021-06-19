@@ -6,8 +6,72 @@
     <title>Document</title>
 </head>
 <body>
+  <header>
+    <h1>
+      Ajax Week
+    </h1>
+  </header>
+  <form id="form1">
+    <h2>Part I</h2>
+    <label for="pt1">Choose a country</label>
+    <select name="pt1" id="pt1" onchange="countryPicker()">
+      <option value="us">US</option>
+      <option value="mexico">Mexico</option>
+      <option value="canada">Canada</option>
+      <option value="russia">Russia</option>
+    </select>
+  </form>
+  <p id="demo"></p>
+  <form id="form2">
+    <h2>Part II</h2>
+    <label for="url">Enter the URL:</label><br>
+    <input type="text" id="url" name="url"><br>
+    <button onclick="alert()">Click me</button>
+  </form>
+  <p id="response2"></p>
   
-  <p>This will be assignment 9</p>
+  <script type="text/javascript">
+    function countryPicker(){
+      var country = document.getElementById("pt1").value;
+      var request;
+      //document.getElementById("demo").innerHTML = "You selected: " + country;
+      var xhttp = new XMLHttpRequest();
+      
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("demo").innerHTML = this.responseText;
+        }
+      };
+      //alert(country);
+      
+     if (country=="mexico"){
+       request="mexico.txt";
+     }
+     if (country=="canada"){
+       request="canada.txt";
+     }
+     if (country=="us"){
+       request="us.txt";
+     }
+     if (country=="russia"){
+       request="russia.txt";
+     }
+
+      
+      xhttp.open("GET", request, true);
+      xhttp.send();
+    }
+
+    function action(){
+      
+      var file=document.getElementById("url").value;
+      alert(file);
+      document.getElementById("response2").innerHTML="file";
+    }
+    
+    
+  </script>
+  
 
 
 </body>

@@ -1,0 +1,12 @@
+
+Rank	City		Population	
+1	Mexico City		9,209,944	
+2	Tijuana	1,810,645	
+3	Ecatepec	1,643,623	
+4	León	1,579,803	
+5	Puebla	1,542,232	
+6	Ciudad Juárez		1,501,551	
+7	Guadalajara		1,385,629	
+8	Zapopan	1,257,547	
+9	Monterrey		1,142,952	
+10	Ciudad Nezahualcóyotl 1,072,676	
