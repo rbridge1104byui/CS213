@@ -5,10 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body onload="MyFunc()">
   
-  <p>This will be assignment 10</p>
+  <h1>Week 10 Ajax PHP and fun</h1>>
+  <p id="response2"></p>
 
+<script>
+  function MyFunc(){
+    alert('hello');
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', "../assign10.php");
+    xhr.onload = function () {
+      console.log(this.response);
+    };
+    xhr.send(data);
+    var body = XMLHttpRequest.response;
+    myObj = JSON.parse(body);
+          
+    //document.getElementById("response3").innerHTML=myObj[0];
+    text = "<table border='12'>"
+    text+= "<tr><th>File Name</th><th>File Type</th><th>Current Working Directory</th><th>Action</th></tr>";
+    
+    for (x in myObj) {
+      text+="<tr>"
+
+      text += "<td>" + myObj[x].fileName + "</td>";
+      text += "><td>" + myObj[x].fileType + "</td>";
+      text += "><td>" + myObj[x].cwd + "</td>";
+      text += "><td>" +"<button  onclick = \"window.location=’"+myObj[x].fileName +".html’"> myObj[x].address.state + "</td>";
+      text+="</tr>"
+    }
+    
+    
+    text += "</table>"    
+    document.getElementById("response2").innerHTML = text;
+    return false;
+  }
+</script>
 
 </body>
 </html>
