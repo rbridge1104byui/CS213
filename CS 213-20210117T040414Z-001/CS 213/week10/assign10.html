@@ -8,38 +8,52 @@
 <body onload="MyFunc()">
   
   <h1>Week 10 Ajax PHP and fun</h1>>
-  <p id="response2"></p>
+  <p id="response2">test</p>
 
 <script>
   function MyFunc(){
-    alert('hello');
+    //alert('hello');
     var xhr = new XMLHttpRequest();
     xhr.open('POST', "../assign10.php");
-    xhr.onload = function () {
+    /*xhr.onload = function () {
       console.log(this.response);
     };
     xhr.send(data);
-    var body = XMLHttpRequest.response;
-    myObj = JSON.parse(body);
+    var body = XMLHttpRequest.response;*/
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          // Action to be performed when the document is read;
+          //document.getElementById("response3").innerHTML=this.responseText;
           
-    //document.getElementById("response3").innerHTML=myObj[0];
-    text = "<table border='12'>"
-    text+= "<tr><th>File Name</th><th>File Type</th><th>Current Working Directory</th><th>Action</th></tr>";
-    
-    for (x in myObj) {
-      text+="<tr>"
+          myObj = JSON.parse(this.responseText);
+          
+    //myObj = JSON.parse(body);
+          
+          //document.getElementById("response3").innerHTML=myObj[0];
+          text = "<table border='12'>"
+          text+= "<tr><th>File Name</th><th>File Type</th><th>Current Working Directory</th><th>Action</th></tr>";
+          
+          for (x in myObj) {
+            text+="<tr>"
 
-      text += "<td>" + myObj[x].fileName + "</td>";
-      text += "><td>" + myObj[x].fileType + "</td>";
-      text += "><td>" + myObj[x].cwd + "</td>";
-      text += "><td>" +"<button  onclick = \"window.location=’"+myObj[x].fileName +".html’"> myObj[x].address.state + "</td>";
-      text+="</tr>"
-    }
-    
-    
-    text += "</table>"    
-    document.getElementById("response2").innerHTML = text;
-    return false;
+            text += "<td>" + myObj[x].fileName + "</td>";
+            text += "><td>" + myObj[x].fileType + "</td>";
+            text += "><td>" + myObj[x].cwd + "</td>";
+            text += "><td>" +"<button  onclick = \"window.location=’"+myObj[x].fileName +".html’"> myObj[x].address.state + "</td>";
+            text+="</tr>"
+          }
+          
+          
+          text += "</table>"    
+          document.getElementById("response2").innerHTML = "text";
+          return false;
+        }
+        else{
+          document.getElementById("response2").innerHTML="File not found";
+        }
+      };
+      xhttp.open("GET", file, true);
+      xhttp.send();
   }
 </script>
 
