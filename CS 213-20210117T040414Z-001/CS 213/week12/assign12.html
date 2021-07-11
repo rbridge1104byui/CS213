@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assign12.css">
     <title>Milage Calculator</title>
 </head>
 <body>
@@ -33,12 +34,36 @@
     var query;
     var startCity = document.getElementById("startCity").value;
     var startState = document.getElementById("startState").value;
+    
     var endCity = document.getElementById("endCity").value;
     var endState = document.getElementById("endState").value;
+    if (startState.length < 2 || endState.length <){
+      window.alert("States must only be two letters.")
+    }
+    if (startState == null || startState == "", startCity == null || startCity == "", endState == null || endState == "", endCity== null || endCity == "") {
+      window.alert("Please Fill All Required Field");
+    }
     query = "/cgi-bin/cs213/mileageAjaxJSON?startCity="+startCity+"&startState="+startState+"&endCity="+endCity+"&endState="+endState;
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("response2").innerHTML = "Test";
+        myObj = JSON.parse(this.responseText);
+          
+          //document.getElementById("response3").innerHTML=myObj[0];
+          text = "<table border='12'>"
+          text+= "<tr><th>Start City</th><th>Start State</th><th>End City</th><th> End State</th><th>Miles</th><th>Transportation Mode(s)</th></tr>";
+          
+          
+          text+="<tr>"
+
+          text += "<td>" + myObj.trip.startcity + "</td>";
+          text += "><td>" + myObj.trip.startstate + "</td>";
+          text += "><td>" + myObj.trip.endcity + "</td>";
+          text += "><td>" + myObj.trip.endstate + "</td>";
+          text += "><td>" + myObj.students[x].trip.miles + "</td>";
+          text += "><td>" + myObj.trip.tmode + "</td>";
+          text+="</tr>"
+          text += "</table>"    
+        document.getElementById("response2").innerHTML = text;
       }
     };
     xhttp.open("GET", query, true);
