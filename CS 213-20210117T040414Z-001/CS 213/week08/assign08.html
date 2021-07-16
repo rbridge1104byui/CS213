@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-  <form>
+  <form id="myForm">
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name"><br>
     <label for="last_name">Last Name:</label>
@@ -14,7 +14,7 @@
     <label for="address">Address:</label>
     <textarea id="address" name="address" rows="3" cols="30"></textarea><br>
     <label for="phone">Phone:</label>
-    <input type="text" id="phone" name="phone"><br>
+    <input type="text" id="phone" name="phone"><br> <!-- Requires validation -->
     <input type="checkbox" id="item_0" name="item_0" value="Bike">
     <label for="vehicle1"> Bike  $80</label><br>
     <input type="checkbox" id="item_1" name="item_1" value="skateboard">
@@ -32,9 +32,9 @@
     <label for="mastercard">Mastercard</label>
     <input type="radio" id="amex" name="card" value="amex">
     <label for="amex">American Express</label><br>
-    <label for="credit_card">Credit Card:</label>
+    <label for="credit_card">Credit Card:</label><!-- Requires validation -->
     <input type="text" id="credit_card" name="credit_card"><br>
-    <label for="exp_date">Credit Card Expiration Date:</label>
+    <label for="exp_date">Credit Card Expiration Date:</label><!-- Requires validation -->
     <textarea id="exp_date" name="exp_date" rows="1" cols="30"></textarea><br>
     <button type = "button" id="submit" onclick="">Submit</button>
       <input type="button" onclick="resetForm()" value="Reset form">
@@ -43,7 +43,12 @@
   </form>
   
   
-
+<script>
+  //resets all content for the form
+  function resetForm(){
+        document.getElementById("myForm").reset();
+      }
+</script>
 
 </body>
 </html>
