@@ -1,0 +1,13 @@
+	Name	Population	
+1	Moscow    10,381,222
+2	St Petersburg  5,028,000
+3	Novosibirsk 	1,419,007
+4	Yekaterinburg    1,349,772
+5	Nizhny Novgorod   1,284,164
+6	Samara     Samara Oblast	1,134,730
+7	Omsk     Omsk	1,129,281
+8	Kazan’ 1,104,738
+9	Rostov-on-Don 1,074,482
+10	Chelyabinsk 	1,062,919
+11	Ufa 	1,033,338
+12	Volgograd  	1,011,417

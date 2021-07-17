@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="mortgage.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+  <header>
+    <h1>Mortgage Calculator</h1>
+  </header>
+  <div class="calculator">
+    <p id="warn"></p>
+    <form action="mortgage.php" method="GET" id="myForm">
+      <label for="apr">APR:</label>
+      <input type="text" id="apr" name="apr">
+      <p>(0.00% to 25.00%)</p><br>
+      <label for="term">Loan Term:</label>
+      <input type="text" id="term" name="term">
+      <p>(0 to 40)</p><br>
+      <label for="amount">Loan Amount:</label>
+      <input type="amount" id="amount" name="amount"><br>
+      <p id="payment">Monthly Payment: </p><br>
+      <input type="submit" value="Send Request" onclick="mortgage()">
+      <input type="button" onclick="resetForm()" value="Reset form">
+    </form>
+    <script>
+      function mortgage(){
+        var message;
+
+        
+        var apr =document.getElementById("apr").value;
+        var time = document.getElementById("term").value;
+        var amount = document.getElementById("amount").value;
+        if (apr > 25|| apr < 0){
+          message="APR should be between 0-25";
+
+        }
+        else if (time <0 || time > 40 ){
+          message="Term should be between  0 and 40 ";
+        }
+        else{
+          
+          //need to calculate monthly payment
+          document.getElementById("payment").innerHTML = "Monthly Payment: "+monthlyPayment;
+        }
+        document.getElementById("warn").innerHTML= message;
+      }
+
+      function resetForm(){
+        document.getElementById("myForm").reset();
+      }
+    </script>
+
+  </div>
+  <footer>
+    <a href='../index.html'>CS213</a>
+  </footer>
+  
+  
+
+
+</body>
+</html>

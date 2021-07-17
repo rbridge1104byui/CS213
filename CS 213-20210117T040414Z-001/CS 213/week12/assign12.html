@@ -3,11 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="assign12.css">
+    <title>Milage Calculator</title>
 </head>
 <body>
+  <header>
+    <h1>Milage Calculator</h1>
+    <p>Enter your beginning and ending city and state to calculate the milage in between</p>
+  </header>
+  <form id="milage" onclick="return false;">
+    <label for="startCity">Start City</label><br>
+    <input type="text" id="startCity" name="startCity"><br>
+    <label for="startState">Start State</label><br>
+    <input type="text" id="startState" name="startState"><br>
+    <label for="endCity">Start City</label><br>
+    <input type="text" id="endCity" name="endCity"><br>
+    <label for="startState">Start State</label><br>
+    <input type="text" id="endState" name="endState"><br>
+    <button onclick="actionFunc()">Calculate Milage</button>
+    <input type="reset" value="Reset">
+  </form>
+  <p id="response2"></p>
+  <footer>
+    <a href='../index.html'>CS213</a>
+  </footer>
+
+  <script>
+    function actionFunc(){
+    var xhttp = new XMLHttpRequest();
+    var query;
+    var startCity = document.getElementById("startCity").value;
+    var startState = document.getElementById("startState").value;
+    
+    var endCity = document.getElementById("endCity").value;
+    var endState = document.getElementById("endState").value;
+    if (startState.length < 2 || endState.length <){
+      window.alert("States must only be two letters.")
+    }
+    if (startState == null || startState == "", startCity == null || startCity == "", endState == null || endState == "", endCity== null || endCity == "") {
+      window.alert("Please Fill All Required Field");
+    }
+    query = "/cgi-bin/cs213/mileageAjaxJSON?startCity="+startCity+"&startState="+startState+"&endCity="+endCity+"&endState="+endState;
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+          
+          //document.getElementById("response3").innerHTML=myObj[0];
+          text = "<table border='12'>"
+          text+= "<tr><th>Start City</th><th>Start State</th><th>End City</th><th> End State</th><th>Miles</th><th>Transportation Mode(s)</th></tr>";
+          
+          
+          text+="<tr>"
+
+          text += "<td>" + myObj.trip.startcity + "</td>";
+          text += "><td>" + myObj.trip.startstate + "</td>";
+          text += "><td>" + myObj.trip.endcity + "</td>";
+          text += "><td>" + myObj.trip.endstate + "</td>";
+          text += "><td>" + myObj.students[x].trip.miles + "</td>";
+          text += "><td>" + myObj.trip.tmode + "</td>";
+          text+="</tr>"
+          text += "</table>"    
+        document.getElementById("response2").innerHTML = text;
+      }
+    };
+    xhttp.open("GET", query, true);
+    xhttp.send();
+    }
+  </script>
   
-  <p>This will be assignment 12</p>
+  
 
 
 </body>

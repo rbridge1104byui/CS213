@@ -1,0 +1,10 @@
+New York City — Population: 8,398,748
+Los Angeles — Population: 3,990,456
+Chicago — Population: 2,705,994
+Houston — Population: 2,325,502
+Phoenix — Population: 1,660,272
+Philadelphia — Population: 1,584,138
+San Antonio — Population: 1,532,233
+San Diego — Population: 1,425,976
+Dallas — Population: 1,345,047
+San Jose — Population: 1,030,119

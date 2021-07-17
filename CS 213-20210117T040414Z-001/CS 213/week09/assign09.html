@@ -3,11 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assign09.css">
     <title>Document</title>
 </head>
 <body>
+  <header>
+    <h1>
+      Ajax Week
+    </h1>
+  </header>
+  <form id="form1" onsubmit="return false;">
+    <h2>Part I</h2>
+    <label for="pt1">Choose a country</label>
+    <select name="pt1" id="pt1" onchange="countryPicker()">
+      <option value="us">US</option>
+      <option value="mexico">Mexico</option>
+      <option value="canada">Canada</option>
+      <option value="russia">Russia</option>
+    </select>
+  </form>
+  <pre id="demo"></pre>
+  <form id="form2" onclick="return false;">
+    <h2>Part II</h2>
+    <label for="url">Enter the File Name:</label><br>
+    <input type="text" id="url" name="url" value="json.txt"><br>
+    <button onclick="actionFunc()">Click me</button>
+    
+  </form>
+  <p id="response2"></p>
+  <p id="response3"></p>
   
-  <p>This will be assignment 9</p>
+  <script>
+    function countryPicker(){
+      var country = document.getElementById("pt1").value;
+      var request;
+      //document.getElementById("demo").innerHTML = "You selected: " + country;
+      var xhttp = new XMLHttpRequest();
+      
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("demo").innerHTML = this.responseText;
+        }
+      };
+      //alert(country);
+      
+     if (country=="mexico"){
+       request="mexico.txt";
+     }
+     if (country=="canada"){
+       request="canada.txt";
+     }
+     if (country=="us"){
+       request="us.txt";
+     }
+     if (country=="russia"){
+       request="russia.txt";
+     }
+
+      
+      xhttp.open("GET", request, true);
+      xhttp.send();
+    }
+
+    function actionFunc(){
+      
+      var file=document.getElementById("url").value;
+      /**if (file==null){
+        file="json.txt";
+      }**/
+      //alert(file);
+      
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          // Action to be performed when the document is read;
+          //document.getElementById("response3").innerHTML=this.responseText;
+          
+          myObj = JSON.parse(this.responseText);
+          
+          //document.getElementById("response3").innerHTML=myObj[0];
+          text = "<table border='12'>"
+          text+= "<tr><th>First Name</th><th>Last Name</th><th>City</th><th>State</th><th>ZIP</th><th>Major</th><th>GPA</th></tr>";
+          
+          for (x in myObj.students) {
+            text+="<tr>"
+
+            text += "<td>" + myObj.students[x].first + "</td>";
+            text += "><td>" + myObj.students[x].last + "</td>";
+            text += "><td>" + myObj.students[x].address.city + "</td>";
+            text += "><td>" + myObj.students[x].address.state + "</td>";
+            text += "><td>" + myObj.students[x].address.zip + "</td>";
+            text += "><td>" + myObj.students[x].major + "</td>";
+            text += "><td>" + myObj.students[x].gpa + "</td>";
+            text+="</tr>"
+          }
+          
+         
+          text += "</table>"    
+          document.getElementById("response2").innerHTML = text;
+        }
+        else{
+          document.getElementById("response2").innerHTML="File not found";
+        }
+      };
+      xhttp.open("GET", file, true);
+      xhttp.send();
+    }
+    
+    
+    
+  </script>
+  
 
 
 </body>
