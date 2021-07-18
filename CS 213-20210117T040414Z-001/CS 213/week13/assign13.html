@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="assign13.css">
     <title>Registration</title>
 </head>
-<body>
+<body onload="registerUser()">
   <header>
     <h1>Piano Registration</h1>
   </header>
   
-  <form id="registration" name="registration" action="assign13.php" method="POST" onsubmit="alert('submit!');return false">
+  <form id="registration" name="registration" action="assign13.php" method="POST"  >
     <label for="performance">Performance Type:</label>
     <select name="performance" id="performance" onchange="choosePerformance()">
       <option value="solo">Solo</option>
@@ -57,7 +57,7 @@
     <label for="appt">Time Slot</label>
     <input type="time" id="time_slot" name="time_slot"
        min="09:00" max="18:00"required="required"><br>
-    <input type="submit" onclick="registerUser()"name="register" value="Register">
+    <input type="submit" name="register" value="Register">
     <input type="button" onclick="myFunctition()" name="clear"value="Clear">
     
   </form>
@@ -77,16 +77,21 @@
       }
     }
     function registerUser(){
-      query = "assign13.php?request=1", true;
-      var xhttp = new XMLHttpRequest();
+      query = "assign13.php";
+      let xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
+        
         if (this.readyState == 4 && this.status == 200) {
-        text = "<table border='12'>"
+          
+          myObj= JSON.parse(this.responseText);
+          //myObj = JSON.parse(response);
+          //alert(myObj);
+          text = "<table border='12'>"
           text+= "<tr><th>Performance Type</th><th>First Name</th><th>Last Name</th><th>Student ID</th><th>First Name Student 2</th>";
           text+= "<th>Last Name Student 2</th><th>Student ID Student 2</th><th>Skill</th><th>instrument</th><th>location</th><th>Room</th><th>Time Slot</th></tr>";
           
           for (x in myObj) {
-            text+="<tr>"
+            text+="<tr>";
 
             text += "<td>" + myObj[x].performance + "</td>";
             text += "><td>" + myObj[x].first_name + "</td>";
@@ -100,15 +105,16 @@
             text += "><td>" + myObj[x].location + "</td>";
             text += "><td>" + myObj[x].room + "</td>";
             text += "><td>" + myObj[x].time_slot + "</td>";
-            text+="</tr>"
+            text+="</tr>";
           }
           
          
-          text += "</table>"    
-          document.getElementById("response2").innerHTML = text;
+          text += "</table>";   
+          document.getElementById("response2").innerHTML = myObj;
         }
         else{
-          document.getElementById("response2").innerHTML="File not found";
+          
+          //document.getElementById("response2").innerHTML="file not found";
         }
       };
       
